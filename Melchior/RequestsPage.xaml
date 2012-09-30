@@ -1,0 +1,99 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="Melchior.RequestsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+   xmlns:local="clr-namespace:Melchior"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="True">
+
+
+
+    <phone:PhoneApplicationPage.Resources>
+        <local:ImagePathConverter x:Key="ImagePathConverter"></local:ImagePathConverter>
+    </phone:PhoneApplicationPage.Resources>
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock x:Name="ApplicationTitle" Text="Заявки в друзья" Style="{StaticResource PhoneTextNormalStyle}"/>
+
+        <ListBox Grid.Row="1" x:Name="RequestsList" Margin="10" >
+
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="0,0,12,25" DataContext="{Binding User}" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.RowSpan="2" Source="{Binding Path=UserPhotoLink, Converter={StaticResource ImagePathConverter}}" Width="50" Height="50" VerticalAlignment="Top" Margin="0,5,7,0" />
+
+                        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+                            <HyperlinkButton Content="{Binding FirstName}" Foreground="#99FFFFFF" VerticalAlignment="Top" CommandParameter="{Binding UserId}" Click="ShowRequestButton_Click" />
+                            <TextBlock Text="{Binding Name}" Foreground="#99FFFFFF" VerticalAlignment="Top" />
+
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <TextBlock Grid.Row="2" Text="Возможные друзья" Style="{StaticResource PhoneTextNormalStyle}"/>
+
+        <ListBox Grid.Row="3" x:Name="SuggestionsList" Margin="10" >
+
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="0,0,12,25">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.RowSpan="2" Source="{Binding  Path=UserPhotoLink, Converter={StaticResource ImagePathConverter}}" Width="50" Height="50" VerticalAlignment="Top" Margin="0,5,7,0" />
+
+                        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+                            <HyperlinkButton Content="{Binding FirstName}" Foreground="#99FFFFFF" VerticalAlignment="Top" CommandParameter="{Binding UserId}" Click="ShowProfileButton_Click" />
+                            <TextBlock Text="{Binding Name}" Foreground="#99FFFFFF" VerticalAlignment="Top" />
+
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+ 
+    <!--Sample code showing usage of ApplicationBar-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+</phone:PhoneApplicationPage>

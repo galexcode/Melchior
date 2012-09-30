@@ -1,0 +1,267 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="Melchior.PivotPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:local="clr-namespace:Melchior"    
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="696"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="PortraitOrLandscape"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+
+
+    <phone:PhoneApplicationPage.Resources>
+        <local:ImagePathConverter x:Key="ImagePathConverter"></local:ImagePathConverter>
+
+        <DataTemplate x:Key="ConversationUserMessageTemplate">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Image Grid.RowSpan="2" Source="{Binding UserPhoto}" Width="50" Height="50" VerticalAlignment="Top" Margin="0,5,7,0" />
+
+                <HyperlinkButton Grid.Column="1" Content="{Binding UserName}" CommandParameter="{Binding UserId}" Foreground="#99FFFFFF" VerticalAlignment="Top" Click="ShowUserConversationLinkButton_Click" />
+            </Grid>
+        </DataTemplate>
+
+        <DataTemplate x:Key="ConversationChatMessageTemplate">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.RowSpan="2" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="{Binding UserPhoto1}" Width="25" Height="25" Margin="2" />
+                    <Image Grid.Column="1" Source="{Binding UserPhoto2}" Width="25" Height="25" Margin="2" />
+                    <Image Grid.Row="1" Source="{Binding UserPhoto3}" Width="25" Height="25" Margin="2" />
+                    <Image Grid.Column="1" Grid.Row="1" Source="{Binding UserPhoto4}" Width="25" Height="25" Margin="2" />
+                </Grid>
+
+                <HyperlinkButton Grid.Column="1" Content="{Binding Title}" CommandParameter="{Binding ChatId}" Foreground="#99FFFFFF" VerticalAlignment="Top" Click="ShowChatConversationLinkButton_Click" />
+            </Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="UserMessageTemplate">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Image Grid.RowSpan="2" Source="{Binding UserPhoto}" Width="50" Height="50" VerticalAlignment="Top" Margin="0,5,7,0" />
+
+                <StackPanel Grid.Column="1" VerticalAlignment="Top">
+                    <HyperlinkButton Content="{Binding UserName}" CommandParameter="{Binding UserId}" Foreground="#99FFFFFF" VerticalAlignment="Top" Click="ShowUserConversationLinkButton_Click" />
+                    <TextBlock Text="{Binding Body}" Foreground="#99FFFFFF" VerticalAlignment="Top" />
+
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
+
+        <DataTemplate x:Key="ChatMessageTemplate">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.RowSpan="2" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="{Binding UserPhoto1}" Width="25" Height="25" Margin="2" />
+                    <Image Grid.Column="1" Source="{Binding UserPhoto2}" Width="25" Height="25" Margin="2" />
+                    <Image Grid.Row="1" Source="{Binding UserPhoto3}" Width="25" Height="25" Margin="2" />
+                    <Image Grid.Column="1" Grid.Row="1" Source="{Binding UserPhoto4}" Width="25" Height="25" Margin="2" />
+                </Grid>
+
+                <StackPanel Grid.Column="1" VerticalAlignment="Top">
+                    <HyperlinkButton Content="{Binding Title}" CommandParameter="{Binding ChatId}" Foreground="#99FFFFFF" VerticalAlignment="Top" Click="ShowChatConversationLinkButton_Click" />
+                    <TextBlock Text="{Binding Body}" Foreground="#99FFFFFF" VerticalAlignment="Top" />
+
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
+    </phone:PhoneApplicationPage.Resources>
+    
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" ></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Image Source="/Images/VK_logotype.png" Width="60" Height="36" HorizontalAlignment="Left" />
+
+            <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button x:Name="NewMessagesButton" Click="NewMessagesButton_Click">
+                    <Button.Content>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Image Source="/Images/UnreadMessages_Icon.png" Width="48" Height="48" Margin="0,5,0,0" />
+                            <StackPanel Grid.Column="1" Background="{StaticResource PhoneAccentBrush}" Width="35" Height="35" VerticalAlignment="Top" >
+                                <TextBlock Text="0" HorizontalAlignment="Center" />
+                            </StackPanel>
+                        </Grid>
+                    </Button.Content>
+                </Button>
+                <Button x:Name="RequestsButton" Click="RequestsButton_Click">
+                    <Button.Content>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Image Source="/Images/Requests_Icon.png" Width="48" Height="48" Margin="0,5,0,0" />
+                            <StackPanel Grid.Column="1" Background="{StaticResource PhoneAccentBrush}" Width="35" Height="35" VerticalAlignment="Top" >
+                                <TextBlock Text="0" HorizontalAlignment="Center" />
+                            </StackPanel>
+                        </Grid>
+                    </Button.Content>
+                </Button>
+            </StackPanel>
+        </Grid>
+        <controls:Pivot x:Name="MainPivot" Grid.Row="1" Title="MY APPLICATION" LoadedPivotItem="MainPivot_LoadedPivotItem" >
+            <controls:PivotItem x:Name="ConversationsPivotItem" Header="беседы">
+                <ListBox x:Name="ConversationsList" SelectionMode="Single" Width="400" Margin="10" >
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <local:ConversationsListItemTemplateSelector Content="{Binding}"
+                                     ConversationUserMessageTemplate="{StaticResource ConversationUserMessageTemplate}"
+                                     ConversationChatMessageTemplate="{StaticResource ConversationChatMessageTemplate}">
+                            </local:ConversationsListItemTemplateSelector>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </controls:PivotItem>
+
+            <controls:PivotItem x:Name="MessagesPivotItem" Header="{Binding Path=Messages, Source={StaticResource SR}}">
+                <ListBox x:Name="MessagesList" Width="400" Margin="10" >
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <local:ConversationMessageTemplateSelector Content="{Binding}"
+                                     UserMessageTemplate="{StaticResource UserMessageTemplate}"
+                                     ChatMessageTemplate="{StaticResource ChatMessageTemplate}">
+                            </local:ConversationMessageTemplateSelector>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </controls:PivotItem>
+
+            <controls:PivotItem x:Name="FriendsPivotItem" Header="{Binding Path=Friends, Source={StaticResource SR}}">
+                    <ListBox x:Name="FriendsList" Margin="10" >
+
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Margin="0,0,12,25">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                <Image Grid.RowSpan="2" Source="{Binding  Path=UserPhotoLink, Converter={StaticResource ImagePathConverter}}" Width="50" Height="50" VerticalAlignment="Top" Margin="0,5,7,0" />
+
+                                    <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+                                    <HyperlinkButton Content="{Binding FirstName}" CommandParameter="{Binding UserId}"  Foreground="#99FFFFFF" VerticalAlignment="Top" Click="ShowUserConversationLinkButton_Click" />
+                                        <TextBlock Text="{Binding Name}" Foreground="#99FFFFFF" VerticalAlignment="Top" />
+
+                                    </StackPanel>
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>  
+            </controls:PivotItem>
+
+            <controls:PivotItem x:Name="ContactsPivotItem" Header="{Binding Path=Contacts, Source={StaticResource SR}}">
+                <StackPanel>
+                    <StackPanel x:Name="SyncContacts">
+                        <TextBlock Text="{Binding Path=Sync_your_phone_contacts, Source={StaticResource SR}}" TextWrapping="Wrap"  Style="{StaticResource PhoneTextNormalStyle}"/>
+                        <Button x:Name="SyncContactsButton" Content="{Binding Path=Sync_contacts, Source={StaticResource SR}}" Width="400" HorizontalAlignment="Left" Click="SyncContactsButton_Click" />
+                    </StackPanel>
+                    <ListBox x:Name="ContactsList" Visibility="Collapsed" Margin="10" >
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Margin="0,0,12,25">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.RowSpan="2" Source="{Binding  Path=UserPhotoLink, Converter={StaticResource ImagePathConverter}}" Width="50" Height="50" VerticalAlignment="Top" Margin="0,5,7,0" />
+
+                                    <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+                                        <HyperlinkButton Content="{Binding FirstName}" CommandParameter="{Binding UserId}" Foreground="#99FFFFFF" VerticalAlignment="Top" Click="ShowUserConversationLinkButton_Click" />
+                                        <TextBlock Text="{Binding Name}" Foreground="#99FFFFFF" VerticalAlignment="Top" />
+
+                                    </StackPanel>
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </StackPanel>
+            </controls:PivotItem>
+        </controls:Pivot>
+        <Image Grid.RowSpan="2" Height="150" HorizontalAlignment="Left" Margin="123,-47,0,0" Name="image1" Stretch="Fill" VerticalAlignment="Top" Width="200" />
+    </Grid>
+
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton x:Name="SearchContactsButton" IconUri="/Images/Appbar_Icons/appbar.feature.search.rest.png" Text="Поиск контактов" Click="SearchContactsButton_Click" />
+            <shell:ApplicationBarIconButton x:Name="NewMessageButton" IconUri="/Images/appbar_button2.png" Text="Создать" Click="NewMessageButton_Click" />
+            <shell:ApplicationBarIconButton x:Name="SearchMessageButton" IconUri="/Images/Appbar_Icons/appbar.feature.search.rest.png" Text="Поиск" Click="SearchMessageButton_Click" />
+            <shell:ApplicationBarIconButton x:Name="RefreshButton" IconUri="/Images/Appbar_Icons/appbar.refresh.rest.png" Text="Обновить" Click="RefreshButton_Click" />            
+
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem x:Name="SettingsMenuItem" Text="Настройки" Click="SettingsMenuItem_Click" />                
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+    
+</phone:PhoneApplicationPage>

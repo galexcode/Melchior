@@ -1,0 +1,351 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{210949DB-5CE5-46BB-8B72-32571BEF2F1C}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Melchior</RootNamespace>
+    <AssemblyName>Melchior</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <TargetFrameworkProfile>WindowsPhone71</TargetFrameworkProfile>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>ru</SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>Melchior.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>Melchior.App</SilverlightAppEntry>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Phone" />
+    <Reference Include="Microsoft.Phone.Controls, Version=7.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Phone.Controls.Toolkit, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b772ad94eb9ca604, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Phone.Interop" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Xml" />
+    <Reference Include="mscorlib.extensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttachmentsContext.cs" />
+    <Compile Include="AttachmentsPage.xaml.cs">
+      <DependentUpon>AttachmentsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ConversationPage.xaml.cs">
+      <DependentUpon>ConversationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ConversationSettingsPage.xaml.cs">
+      <DependentUpon>ConversationSettingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\ImagePathConverter.cs" />
+    <Compile Include="AuthorizationContext.cs" />
+    <Compile Include="EditConversationPage.xaml.cs">
+      <DependentUpon>EditConversationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorPage.xaml.cs">
+      <DependentUpon>ErrorPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FriendsSearchPage.xaml.cs">
+      <DependentUpon>FriendsSearchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MelchiorContext.cs" />
+    <Compile Include="PivotPage.xaml.cs">
+      <DependentUpon>PivotPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProfilePage.xaml.cs">
+      <DependentUpon>ProfilePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RequestPage.xaml.cs">
+      <DependentUpon>RequestPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RequestsPage.xaml.cs">
+      <DependentUpon>RequestsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SearchPage.xaml.cs">
+      <DependentUpon>SearchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Selectors\ConversationMessageTemplateSelector.cs" />
+    <Compile Include="Selectors\ConversationsListItemTemplateSelector.cs" />
+    <Compile Include="Selectors\DataTemplateSelector.cs" />
+    <Compile Include="Selectors\MessageTemplateSelector.cs" />
+    <Compile Include="SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SignUpConfirmPage.xaml.cs">
+      <DependentUpon>SignUpConfirmPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SignUpPage.xaml.cs">
+      <DependentUpon>SignUpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Selectors\AttachmentTemplateSelector.cs" />
+    <Compile Include="StringResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StringResources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="AttachmentsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ConversationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ConversationSettingsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditConversationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ErrorPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FriendsSearchPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PivotPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProfilePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RequestPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RequestsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SearchPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SettingsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SignUpConfirmPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SignUpPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="Properties\WMAppManifest.xml" />
+    <None Include="Resources\Appbar_Attachments_Counter.psd" />
+    <None Include="Resources\Contacts.psd" />
+    <None Include="Resources\Contacts_Sync.psd" />
+    <None Include="Resources\Conversation.psd" />
+    <None Include="Resources\Conversations_List.psd" />
+    <None Include="Resources\Conversations_Search1.psd" />
+    <None Include="Resources\Conversations_Search2.psd" />
+    <None Include="Resources\Conversation_Actions.psd" />
+    <None Include="Resources\Conversation_InputFocus.psd" />
+    <None Include="Resources\Conversation_Multi.psd" />
+    <None Include="Resources\Conversation_Multi_Edit1.psd" />
+    <None Include="Resources\Conversation_Multi_Edit2.psd" />
+    <None Include="Resources\Conversation_ViewAttaches1.psd" />
+    <None Include="Resources\Conversation_ViewAttaches2.psd" />
+    <None Include="Resources\Friends.psd" />
+    <None Include="Resources\FriendsRequests.psd" />
+    <None Include="Resources\Friends_Search.psd" />
+    <None Include="Resources\Landscape_Conversation.psd" />
+    <None Include="Resources\Landscape_Conversations_List.psd" />
+    <None Include="Resources\Landscape_Login.psd" />
+    <None Include="Resources\Landscape_Profile_Request.psd" />
+    <None Include="Resources\LightTheme_Contacts.psd" />
+    <None Include="Resources\Login.psd" />
+    <None Include="Resources\Profile_Friend_Sync.psd" />
+    <None Include="Resources\Profile_Invite.psd" />
+    <None Include="Resources\Profile_Request.psd" />
+    <None Include="Resources\Settings.psd" />
+    <None Include="Resources\SignUp.psd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ApplicationIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Background.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\Map_Pin.png" />
+    <None Include="Resources\Photo_Placeholder.png" />
+    <None Include="Resources\Requests_Icon.png" />
+    <None Include="Resources\Requests_Icon_Light.png" />
+    <None Include="Resources\UnreadMessages_Icon.png" />
+    <None Include="Resources\UnreadMessages_Icon_Light.png" />
+    <None Include="Resources\VK_logotype.png" />
+    <None Include="Resources\VK_logotype_Light.png" />
+    <None Include="Resources\appbar.add.rest.png" />
+    <None Include="Resources\appbar.attachments-1.rest.png" />
+    <None Include="Resources\appbar.attachments-2.rest.png" />
+    <None Include="Resources\appbar.attachments-3.rest.png" />
+    <None Include="Resources\appbar.attachments-4.rest.png" />
+    <None Include="Resources\appbar.attachments-5.rest.png" />
+    <None Include="Resources\appbar.attachments-6.rest.png" />
+    <None Include="Resources\appbar.attachments-7.rest.png" />
+    <None Include="Resources\appbar.attachments-8.rest.png" />
+    <None Include="Resources\appbar.attachments-9.rest.png" />
+    <None Include="Resources\appbar.attachments-10.rest.png" />
+    <None Include="Resources\appbar.basecircle.rest.png" />
+    <None Include="Resources\appbar.cancel.rest.png" />
+    <None Include="Resources\appbar.checkin.rest.png" />
+    <None Include="Resources\appbar.delete.rest.png" />
+    <None Include="Resources\appbar.feature.camera.rest.png" />
+    <None Include="Resources\appbar.feature.search.rest.png" />
+    <None Include="Resources\appbar.forward.rest.png" />
+    <None Include="Resources\appbar.manage.rest.png" />
+    <None Include="Resources\appbar.minus.rest.png" />
+    <None Include="Resources\appbar.overflowdots.png" />
+    <None Include="Resources\appbar.refresh.rest.png" />
+    <None Include="Resources\appbar.save.rest.png" />
+    <None Include="Resources\appbar.send.text.rest.png" />
+    <None Include="Resources\appbar.transport.pause.rest.png" />
+    <None Include="Resources\appbar.transport.play.rest.png" />
+    <Content Include="Images\Appbar_Icons\appbar.add.rest.png" />
+    <Content Include="Images\Appbar_Icons\appbar.attachments-1.rest.png" />
+    <Content Include="Images\Appbar_Icons\appbar.attachments-10.rest.png" />
+    <Content Include="Images\Appbar_Icons\appbar.attachments-2.rest.png" />
+    <Content Include="Images\Appbar_Icons\appbar.attachments-3.rest.png" />
+    <Content Include="Images\Appbar_Icons\appbar.attachments-4.rest.png" />
+    <Content Include="Images\Appbar_Icons\appbar.attachments-5.rest.png" />
+    <Content Include="Images\Appbar_Icons\appbar.attachments-6.rest.png" />
+    <Content Include="Images\Appbar_Icons\appbar.attachments-7.rest.png" />
+    <Content Include="Images\Appbar_Icons\appbar.attachments-8.rest.png" />
+    <Content Include="Images\Appbar_Icons\appbar.attachments-9.rest.png" />
+    <Content Include="Images\Appbar_Icons\appbar.basecircle.rest.png" />
+    <Content Include="Images\Appbar_Icons\appbar.cancel.rest.png" />
+    <Content Include="Images\Appbar_Icons\appbar.checkin.rest.png" />
+    <Content Include="Images\Appbar_Icons\appbar.delete.rest.png" />
+    <Content Include="Images\Appbar_Icons\appbar.feature.camera.rest.png" />
+    <Content Include="Images\Appbar_Icons\appbar.feature.search.rest.png" />
+    <Content Include="Images\Appbar_Icons\appbar.forward.rest.png" />
+    <Content Include="Images\Appbar_Icons\appbar.manage.rest.png" />
+    <Content Include="Images\Appbar_Icons\appbar.minus.rest.png" />
+    <Content Include="Images\Appbar_Icons\appbar.overflowdots.png" />
+    <Content Include="Images\Appbar_Icons\appbar.refresh.rest.png" />
+    <Content Include="Images\Appbar_Icons\appbar.save.rest.png" />
+    <Content Include="Images\Appbar_Icons\appbar.send.text.rest.png" />
+    <Content Include="Images\Appbar_Icons\appbar.transport.pause.rest.png" />
+    <Content Include="Images\Appbar_Icons\appbar.transport.play.rest.png" />
+    <Content Include="Images\Map_Pin.png" />
+    <Content Include="Images\Photo_Placeholder.png" />
+    <Content Include="Images\Requests_Icon.png" />
+    <Content Include="Images\Requests_Icon_Light.png" />
+    <Content Include="Images\UnreadMessages_Icon.png" />
+    <Content Include="Images\UnreadMessages_Icon_Light.png" />
+    <Content Include="Images\VK_logotype.png" />
+    <Content Include="Images\VK_logotype_Light.png" />
+    <Content Include="SplashScreenImage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Melchior.Common\Melchior.Common.csproj">
+      <Project>{5BA01ACB-5A04-4F77-9A74-FE5CF6B58C11}</Project>
+      <Name>Melchior.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Melchior.Models\Melchior.Models.csproj">
+      <Project>{54A62236-F652-4D64-912B-683713339662}</Project>
+      <Name>Melchior.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Melchior.Request.Common\Melchior.Request.Common.csproj">
+      <Project>{774C074D-F0E0-4F0B-9D47-0490652719DC}</Project>
+      <Name>Melchior.Request.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Melchior.Request.Xml\Melchior.Request.Xml.csproj">
+      <Project>{A90DC92E-81E1-41D0-A5D9-D556376BC1D5}</Project>
+      <Name>Melchior.Request.Xml</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Melchior.RequestsLibrary\Melchior.RequestsLibrary.csproj">
+      <Project>{B6F319ED-0511-40AD-87F8-B961D7358F8D}</Project>
+      <Name>Melchior.RequestsLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Melchior.ViewModels\Melchior.ViewModels.csproj">
+      <Project>{DFC9FD5C-EEC5-4771-8778-1FAC31F5813F}</Project>
+      <Name>Melchior.ViewModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MelchiorAudioPlaybackAgent\MelchiorAudioPlaybackAgent.csproj">
+      <Project>{F3567CA4-8C42-40AE-BC64-6CC953B03D05}</Project>
+      <Name>MelchiorAudioPlaybackAgent</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="StringResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>StringResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StringResources.ru.resx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions />
+</Project>

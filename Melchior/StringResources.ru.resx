@@ -1,0 +1,318 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Add_friend" xml:space="preserve">
+    <value>Добавить в друзья</value>
+  </data>
+  <data name="Add_person" xml:space="preserve">
+    <value>Добавить собеседника</value>
+  </data>
+  <data name="Audio" xml:space="preserve">
+    <value>Аудиозапись</value>
+  </data>
+  <data name="Authorization_error" xml:space="preserve">
+    <value>Неверные данные. Пожалуйста, убедитесь, что телефон или email и пароль введены правильно и повторите попытку.</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Назад</value>
+  </data>
+  <data name="Call_phone" xml:space="preserve">
+    <value>Позвонить на {phone}</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="Change_chat" xml:space="preserve">
+    <value>Изменить название беседы</value>
+  </data>
+  <data name="Change_photo" xml:space="preserve">
+    <value>Изменить фотографию</value>
+  </data>
+  <data name="Choose_existing_photo" xml:space="preserve">
+    <value>Выбрать фото из галереи</value>
+  </data>
+  <data name="Contacts" xml:space="preserve">
+    <value>Контакты</value>
+  </data>
+  <data name="Decline_request" xml:space="preserve">
+    <value>Отклонить заявку</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="Delete_friend" xml:space="preserve">
+    <value>Удалить из друзей</value>
+  </data>
+  <data name="Disable_notification" xml:space="preserve">
+    <value>Отключить звуковые уведомления на {time}</value>
+  </data>
+  <data name="Document" xml:space="preserve">
+    <value>Документ</value>
+  </data>
+  <data name="Error_uploading" xml:space="preserve">
+    <value>Ошибка загрузки</value>
+  </data>
+  <data name="Fast_Messaging" xml:space="preserve">
+    <value>Вы сможете бесплатно обмениваться мгновенными сообщениями с друзьями</value>
+  </data>
+  <data name="Forward" xml:space="preserve">
+    <value>Переслать</value>
+  </data>
+  <data name="Forwarded_message" xml:space="preserve">
+    <value>Пересланное сообщение</value>
+  </data>
+  <data name="Friends" xml:space="preserve">
+    <value>Друзья</value>
+  </data>
+  <data name="Friend_requests" xml:space="preserve">
+    <value>Заявки в друзья</value>
+  </data>
+  <data name="In_app_notifications" xml:space="preserve">
+    <value>Оповещения в приложении</value>
+  </data>
+  <data name="Loading_messages" xml:space="preserve">
+    <value>Сообщения загружаются..</value>
+  </data>
+  <data name="Log_in" xml:space="preserve">
+    <value>Войти</value>
+  </data>
+  <data name="Map" xml:space="preserve">
+    <value>Карта</value>
+  </data>
+  <data name="Messages" xml:space="preserve">
+    <value>Сообщения</value>
+  </data>
+  <data name="Message_was_not_sent" xml:space="preserve">
+    <value>Сообщение не удалось отправить.</value>
+  </data>
+  <data name="New_account" xml:space="preserve">
+    <value>Регистрация</value>
+  </data>
+  <data name="No_messages_yet" xml:space="preserve">
+    <value>Сообщений пока нет</value>
+  </data>
+  <data name="Num_members" xml:space="preserve">
+    <value>{num} участников беседы</value>
+  </data>
+  <data name="Online" xml:space="preserve">
+    <value>Онлайн</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Пароль</value>
+  </data>
+  <data name="People_you_may_know" xml:space="preserve">
+    <value>Возможные друзья</value>
+  </data>
+  <data name="Photo" xml:space="preserve">
+    <value>Фотография</value>
+  </data>
+  <data name="Push_notifications" xml:space="preserve">
+    <value>Push-оповещения</value>
+  </data>
+  <data name="Remove_attachment" xml:space="preserve">
+    <value>Удалить вложение</value>
+  </data>
+  <data name="Requests" xml:space="preserve">
+    <value>Заявки</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Поиск</value>
+  </data>
+  <data name="Search_among_all_registred_users" xml:space="preserve">
+    <value>Вы можете искать своих друзей и знакомых среди всех пользователей</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>Отпр.</value>
+  </data>
+  <data name="Send_a_message" xml:space="preserve">
+    <value>Отправить сообщение</value>
+  </data>
+  <data name="Send_invitation" xml:space="preserve">
+    <value>Отправить приглашение</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Настройки</value>
+  </data>
+  <data name="Share_location" xml:space="preserve">
+    <value>Прикрепить местоположение</value>
+  </data>
+  <data name="Sign_up" xml:space="preserve">
+    <value>Зарегистрироваться</value>
+  </data>
+  <data name="Sound" xml:space="preserve">
+    <value>Звук</value>
+  </data>
+  <data name="Sync_contacts" xml:space="preserve">
+    <value>Синхронизировать контакты</value>
+  </data>
+  <data name="Sync_your_phone_contacts" xml:space="preserve">
+    <value>Вы можете синхронизировать список друзей VK с записной книжкой Вашего телефона</value>
+  </data>
+  <data name="Take_photo" xml:space="preserve">
+    <value>Сделать снимок с камеры</value>
+  </data>
+  <data name="Try_again" xml:space="preserve">
+    <value>Повторить попытку</value>
+  </data>
+  <data name="Uploading_attachments" xml:space="preserve">
+    <value>Вложения загружаются..</value>
+  </data>
+  <data name="User_is_not_registred_yet" xml:space="preserve">
+    <value>Пользователь ещё не зарегистрирован. Вы можете отправить ему приглашение</value>
+  </data>
+  <data name="User_is_typing" xml:space="preserve">
+    <value>{user} набирает сообщение...</value>
+  </data>
+  <data name="User_was_last_seen_time_ago" xml:space="preserve">
+    <value>{user} был в сети {time} назад</value>
+  </data>
+  <data name="Vibrate" xml:space="preserve">
+    <value>Вибрация</value>
+  </data>
+  <data name="Video" xml:space="preserve">
+    <value>Видеозапись</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Добро пожаловать</value>
+  </data>
+  <data name="Write_a_message" xml:space="preserve">
+    <value>Написать сообщение</value>
+  </data>
+  <data name="Your_name" xml:space="preserve">
+    <value>Ваше имя</value>
+  </data>
+  <data name="Your_password" xml:space="preserve">
+    <value>Ваш пароль</value>
+  </data>
+  <data name="Your_phone_number" xml:space="preserve">
+    <value>Номер Вашего телефона</value>
+  </data>
+  <data name="Your_lastname" xml:space="preserve">
+    <value>Ваша фамилия</value>
+  </data>
+  <data name="Account" xml:space="preserve">
+    <value>Аккаунт</value>
+  </data>
+  <data name="LogOff" xml:space="preserve">
+    <value>Выйти</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>Обновить</value>
+  </data>
+</root>

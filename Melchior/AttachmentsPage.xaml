@@ -1,0 +1,62 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="Melchior.AttachmentsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="696" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="True">
+
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock x:Name="AttachmentsTitle" Text="MY APPLICATION" Style="{StaticResource PhoneTextNormalStyle}"/>
+        
+        <ListBox Grid.Row="1" x:Name="AttachmentsList" Margin="10" >
+
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <StackPanel DataContext="{Binding LeftImage}">
+                            <Image  Source="{Binding BitmapImage}" Margin="5"  />
+                            <Button CommandParameter="{Binding ImageGuid}" VerticalAlignment="Top" HorizontalAlignment="Right"  Width="48" Height="48" Click="RemoveImageButton_Click" >
+                                <Button.Content>
+                                    <Image Source="/Images/Appbar_Icons/appbar.cancel.rest.png"  Width="48" Height="48" />
+                                </Button.Content>
+                            </Button>
+                        </StackPanel>
+                        <StackPanel Grid.Column="1" DataContext="{Binding RightImage}">
+                            <Image  Source="{Binding BitmapImage}" Margin="5"  />
+                            <Button CommandParameter="{Binding ImageGuid}" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Right" Width="48" Height="48" Click="RemoveImageButton_Click" >
+                            <Button.Content>
+                                <Image Source="/Images/Appbar_Icons/appbar.cancel.rest.png"  Width="48" Height="48" />
+                            </Button.Content>
+                        </Button>
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+ 
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton x:Name="CameraButton" IconUri="/Images/Appbar_Icons/appbar.feature.camera.rest.png" Text="Button 1"  Click="CameraButton_Click" />
+            <shell:ApplicationBarIconButton x:Name="AttachButton" IconUri="/Images/Appbar_Icons/appbar.checkin.rest.png" Text="Button 2" Click="AttachButton_Click" />
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+</phone:PhoneApplicationPage>
