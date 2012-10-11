@@ -22,7 +22,8 @@ namespace Melchior.RequestsLibrary
             Query = String.Concat(QueryHeader, "?grant_type=password&client_id=", ClientId, "&client_secret=", ClientSecret, "&username=", userName, "&password=", password, "&scope=", scope);
         }
 
-        public AutorizationRequestCommand(string userName, string password) : this(userName, password, "messages,offline,friends,photos")
+        public AutorizationRequestCommand(string userName, string password)
+            : this(userName, password, "messages,offline,friends,photos")
         {
         }
 

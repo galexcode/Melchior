@@ -53,7 +53,7 @@ namespace Melchior
     public sealed class MelchiorContext
     {
         private static volatile MelchiorContext instance;
- 
+
         private static readonly Object lockObject = new Object();
 
         public static MelchiorContext Instance
@@ -257,7 +257,7 @@ namespace Melchior
                                     var userId = update[1];
                                     var userStatus = update[2].Equals(Chars.Zero) ? UserStatuses.Offline : UserStatuses.Timeout;
                                     if (!usersStatus.ContainsKey(userId))
-                                       {
+                                    {
                                         usersStatus.Add(userId, UserStatuses.Online);
                                     }
                                     else

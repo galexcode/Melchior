@@ -18,7 +18,7 @@ namespace Melchior.ViewModels
     {
         public string UserName { get; set; }
         private BitmapImage userPhoto;
-        public BitmapImage UserPhoto 
+        public BitmapImage UserPhoto
         {
             get
             {

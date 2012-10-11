@@ -11,7 +11,8 @@ namespace Melchior.Models
 
         public string Hash { get { return Data.GetFieldTextContent("hash"); } }
 
-        public UploadPhotoInfo(VKData data) : base(data)
+        public UploadPhotoInfo(VKData data)
+            : base(data)
         {
         }
     }

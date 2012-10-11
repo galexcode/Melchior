@@ -39,7 +39,7 @@ namespace Melchior
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs args)
         {
             base.OnNavigatedTo(args);
-                        
+
             var conversationUserId = NavigationContext.QueryString.ContainsKey("ConversationUserId") ? NavigationContext.QueryString["ConversationUserId"] : null;
             var conversationChatId = NavigationContext.QueryString.ContainsKey("ConversationChatId") ? NavigationContext.QueryString["ConversationChatId"] : null;
 
@@ -62,7 +62,7 @@ namespace Melchior
                     System.Diagnostics.Debug.WriteLine("Result is empty");
                     return;
                 }
-               MelchiorContext.Instance.ConversationViewModel.Messages = new ObservableCollection<MessageViewModel>(e.Result.Select(x => new MessageViewModel(MelchiorContext.Instance.AccessToken, MelchiorContext.Instance.OwnerUserId, conversationChatId, conversationUserId, x)));
+                MelchiorContext.Instance.ConversationViewModel.Messages = new ObservableCollection<MessageViewModel>(e.Result.Select(x => new MessageViewModel(MelchiorContext.Instance.AccessToken, MelchiorContext.Instance.OwnerUserId, conversationChatId, conversationUserId, x)));
             };
             GetHistoryCommand.Execute(true);
         }
@@ -89,7 +89,7 @@ namespace Melchior
             if (PlayState.Playing != BackgroundAudioPlayer.Instance.PlayerState)
             {
                 var url = (string)((sender as Button).CommandParameter);
-                
+
                 BackgroundAudioPlayer.Instance.Track = new AudioTrack(new Uri(url), "test title", "test artist", "test album", null);
                 BackgroundAudioPlayer.Instance.Play();
             }
@@ -206,12 +206,12 @@ namespace Melchior
             };
             getMessagesUploadServer.Execute();
         }
-        
+
 
         private void AttachmentsButton_Click(object sender, EventArgs e)
         {
             var uri = new Uri("/AttachmentsPage.xaml?", UriKind.Relative);
-            NavigationService.Navigate(uri);  
+            NavigationService.Navigate(uri);
         }
 
         private void SettingsButton_Click(object sender, EventArgs e)

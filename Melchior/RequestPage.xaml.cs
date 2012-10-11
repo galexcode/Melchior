@@ -65,11 +65,11 @@ namespace Melchior
                     System.Diagnostics.Debug.WriteLine("Result is empty");
                     return;
                 }
-                
+
                 NavigationService.RemoveBackEntry();
 
                 var uri = new Uri(String.Concat("/ProfilePage.xaml?UserId=", UserId), UriKind.Relative);
-                NavigationService.Navigate(uri);  
+                NavigationService.Navigate(uri);
             };
             addFriendCommand.Execute(true);
         }

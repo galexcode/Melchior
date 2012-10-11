@@ -8,10 +8,10 @@ namespace Melchior.Models
     {
         public LongPollEventDescription(VKData data)
         {
-			if (data == null)
-			{
-				throw new ArgumentNullException("data");
-			}
+            if (data == null)
+            {
+                throw new ArgumentNullException("data");
+            }
             VKDataCollection items = data.GetChildren();
             for (int i = 0, length = items.GetLength(); i < length; i++)
             {

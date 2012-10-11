@@ -27,7 +27,7 @@ namespace Melchior
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            
+
             DataContext = new SignUpViewModel();
         }
 
@@ -61,7 +61,7 @@ namespace Melchior
                 var uri = new Uri(String.Concat("/SignUpConfirmPage.xaml?sid=", sid), UriKind.Relative);
                 NavigationService.Navigate(uri);
             };
-            signUpCommand.Execute();  
+            signUpCommand.Execute();
         }
     }
 }

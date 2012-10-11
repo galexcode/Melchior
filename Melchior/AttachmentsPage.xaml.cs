@@ -82,7 +82,7 @@ namespace Melchior
 
         private void RemoveImageButton_Click(object sender, RoutedEventArgs e)
         {
-            var imageGuid = (int)((sender as Button).CommandParameter);            
+            var imageGuid = (int)((sender as Button).CommandParameter);
             AttachmentsContext.Instance.RemoveByGuid(imageGuid);
 
             BuildAttachmentsList();

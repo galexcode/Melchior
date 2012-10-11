@@ -11,7 +11,7 @@ namespace Melchior.ViewModels
         public string UserId { get; set; }
 
         private string firstName;
-        public string FirstName 
+        public string FirstName
         {
             get
             {
@@ -90,7 +90,7 @@ namespace Melchior.ViewModels
                 var user = e.Result[0];
                 FirstName = user.FirstName;
                 Name = String.Concat(FirstName, Chars.Space, user.LastName);
-                UserPhotoLink = user.PhotoLink; 
+                UserPhotoLink = user.PhotoLink;
                 UserIsOnline = user.IsOnline;
             };
             getUsersCommand.Execute(true);

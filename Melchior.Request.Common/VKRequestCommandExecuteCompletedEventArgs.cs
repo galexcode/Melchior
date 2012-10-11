@@ -22,5 +22,4 @@ namespace Melchior.Request.Common
             Result = result;
         }
     }
-    
 }

@@ -8,7 +8,8 @@ namespace Melchior.ViewModels
     {
         public string Message { get; private set; }
 
-        public RequestViewModel(string accessToken, RequestInfo request) : base(accessToken, request.UserId)
+        public RequestViewModel(string accessToken, RequestInfo request)
+            : base(accessToken, request.UserId)
         {
             Message = request.Message;
         }

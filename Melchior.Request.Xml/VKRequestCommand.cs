@@ -23,7 +23,7 @@ namespace Melchior.Request.Xml
 
         public Func<VKData, TResult> Converter;
 
-        public VKRequestCommand(string accessToken, string methodName, Func<VKData, TResult> converter, VKRequestTypes requestType = VKRequestTypes.XML) 
+        public VKRequestCommand(string accessToken, string methodName, Func<VKData, TResult> converter, VKRequestTypes requestType = VKRequestTypes.XML)
         {
             MethodName = methodName;
             Converter = converter;
@@ -74,7 +74,7 @@ namespace Melchior.Request.Xml
                     throw new VKRequestCustomException(new VKDataJSON(document["error"]));
                 }
                 data = new VKDataJSON(document["response"]);
-                
+
             }
             return Converter(data);
         }

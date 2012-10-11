@@ -28,7 +28,7 @@ namespace Melchior
         {
             base.OnNavigatedTo(args);
 
-            var getUserCommand = MelchiorContext.Instance.UsersRequestsLibrary.CreateGetUsersCommand(MelchiorContext.Instance.OwnerUserId, new string[]{ UserInfo.FieldUserId, UserInfo.FieldFirstName, UserInfo.FieldLastName, UserInfo.FieldPhotoLink  });
+            var getUserCommand = MelchiorContext.Instance.UsersRequestsLibrary.CreateGetUsersCommand(MelchiorContext.Instance.OwnerUserId, new string[] { UserInfo.FieldUserId, UserInfo.FieldFirstName, UserInfo.FieldLastName, UserInfo.FieldPhotoLink });
             getUserCommand.ExecuteCompleted += (sender, e) =>
             {
                 if (e.Error != null)
@@ -67,14 +67,14 @@ namespace Melchior
         {
             var task = new PhotoChooserTask();
             task.Completed += (xsender, xe) =>
-            {                
+            {
                 var bitmap = new BitmapImage();
                 bitmap.SetSource(xe.ChosenPhoto);
                 (DataContext as SettingsViewModel).UserPhoto = bitmap;
             };
             task.Show();
         }
-        
+
         private void DisableNotificationButton_Click(object sender, RoutedEventArgs e)
         {
             var date = DateTime.Now.AddHours(8.0);

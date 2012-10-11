@@ -35,7 +35,7 @@ namespace Melchior
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs args)
         {
             base.OnNavigatedTo(args);
-            
+
 
             GetDialogsCommand = MelchiorContext.Instance.MessagesRequestsLibrary.CreateGetDialogsCommand();
             GetDialogsCommand.ExecuteCompleted += (sender, e) =>
@@ -91,7 +91,7 @@ namespace Melchior
 
             GetDialogsCommand.Execute(true);
             GetMessagesCommand.Execute(true);
-            GetFriendsCommand.Execute(true);     
+            GetFriendsCommand.Execute(true);
         }
         public static Microsoft.Phone.UserData.Contact con;
 
@@ -99,7 +99,7 @@ namespace Melchior
         {
             SyncContacts.Visibility = Visibility.Collapsed;
             ContactsList.Visibility = Visibility.Visible;
-            
+
             var contacts = new Contacts();
             contacts.SearchCompleted += (zsender, ze) =>
             {
@@ -126,7 +126,7 @@ namespace Melchior
                 getContactsCommandsCommand.Execute(true);
             };
             contacts.SearchAsync(null, FilterKind.None, null);
-            
+
         }
 
         private void NewMessagesButton_Click(object sender, RoutedEventArgs e)
@@ -137,7 +137,7 @@ namespace Melchior
         private void RequestsButton_Click(object sender, RoutedEventArgs e)
         {
             var uri = new Uri(String.Concat("/RequestsPage.xaml"), UriKind.Relative);
-            NavigationService.Navigate(uri);  
+            NavigationService.Navigate(uri);
         }
 
         private void ShowChatConversationLinkButton_Click(object sender, RoutedEventArgs e)

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace Melchior.Data.Common
 {
-	public abstract class VKDataCollection : IEnumerable<VKData>
-	{
-		public abstract VKData GetItem(int index);
-		
-		public abstract int GetLength();
+    public abstract class VKDataCollection : IEnumerable<VKData>
+    {
+        public abstract VKData GetItem(int index);
+
+        public abstract int GetLength();
 
         public IEnumerator<VKData> GetEnumerator()
         {

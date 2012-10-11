@@ -49,7 +49,7 @@ namespace Melchior
         private void SelectButton_Click(object sender, RoutedEventArgs e)
         {
             var userId = (string)((sender as HyperlinkButton).CommandParameter);
-            
+
             var addChatUserCommand = MelchiorContext.Instance.MessagesRequestsLibrary.CreateAddChatUserCommand(ConversationChatId, userId);
             addChatUserCommand.ExecuteCompleted += (xsender, xe) =>
             {

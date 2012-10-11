@@ -4,38 +4,38 @@ using Melchior.Data.Common;
 
 namespace Melchior.Models
 {
-	/// <summary>
-	/// Информация о диалогах
-	/// <remarks>Author WrMax</remarks>
-	///
-	/// </summary>
-	public class DialogsDataInfo
-	{
-		private List<UserInfo> profiles;
-		public List<UserInfo> Profiles
-		{
+    /// <summary>
+    /// Информация о диалогах
+    /// <remarks>Author WrMax</remarks>
+    ///
+    /// </summary>
+    public class DialogsDataInfo
+    {
+        private List<UserInfo> profiles;
+        public List<UserInfo> Profiles
+        {
             get
             {
                 return profiles;
             }
-		}
-		public List<ChatInfo> chatList;
-		public List<ChatInfo> ChatList
-		{
+        }
+        public List<ChatInfo> chatList;
+        public List<ChatInfo> ChatList
+        {
             get
             {
                 return chatList;
             }
-		}
+        }
 
-		public DialogsDataInfo(VKData data)
-		{
-			if (data == null) throw new ArgumentNullException("data");
+        public DialogsDataInfo(VKData data)
+        {
+            if (data == null) throw new ArgumentNullException("data");
 
-			profiles = new List<UserInfo>();
-			chatList = new List<ChatInfo>();
-			
-			VKDataCollection items = data.GetChildren("item");
+            profiles = new List<UserInfo>();
+            chatList = new List<ChatInfo>();
+
+            VKDataCollection items = data.GetChildren("item");
             for (int i = 0, length = items.GetLength(); i < length; i++)
             {
                 VKData childItem = items.GetItem(i);
@@ -55,6 +55,6 @@ namespace Melchior.Models
                     }
                 }
             }
-		}
-	}
+        }
+    }
 }

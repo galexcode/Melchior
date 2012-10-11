@@ -8,17 +8,17 @@ using Melchior.Data.Common;
 
 namespace Melchior.RequestsLibrary
 {
-	/// <summary>
-	/// Базовый класс библиотеки методов 
-	/// author wrmax
-	/// </summary>
-	public abstract class BaseRequestsLibrary
-	{
-		public readonly string AccessToken;
-		public BaseRequestsLibrary(string accessToken)
-		{
-			AccessToken = accessToken;
-		}
+    /// <summary>
+    /// Базовый класс библиотеки методов 
+    /// author wrmax
+    /// </summary>
+    public abstract class BaseRequestsLibrary
+    {
+        public readonly string AccessToken;
+        public BaseRequestsLibrary(string accessToken)
+        {
+            AccessToken = accessToken;
+        }
 
         internal VKRequestCommand<bool> CreateBooleanRequestCommand(string methodName)
         {
@@ -40,12 +40,12 @@ namespace Melchior.RequestsLibrary
             return new VKRequestCommand<UploadInfo>(AccessToken, methodName, (data) => { return new UploadInfo(data); });
         }
 
-		/// <summary>
-		/// Универсальный метод, позволяющий выполнять произвольный набор методов API одним запросом.
-		/// </summary>
+        /// <summary>
+        /// Универсальный метод, позволяющий выполнять произвольный набор методов API одним запросом.
+        /// </summary>
         internal void Execute()
-		{
-			throw new NotSupportedException();
-		}
-	}
+        {
+            throw new NotSupportedException();
+        }
+    }
 }

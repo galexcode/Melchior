@@ -33,7 +33,7 @@ namespace Melchior
             get;
             set;
         }
-        
+
         public DataTemplate DocumentTemplate
         {
             get;

@@ -51,7 +51,5 @@ namespace Melchior.ViewModels.PageViewModels
             ConversationChatId = conversationChatId;
             ConversationUserId = conversationUserId;
         }
-
-
     }
 }

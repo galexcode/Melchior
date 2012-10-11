@@ -15,7 +15,7 @@ namespace Melchior
     public sealed class AuthorizationContext
     {
         private static volatile AuthorizationContext instance;
- 
+
         private static readonly Object lockObject = new Object();
 
         public static AuthorizationContext Instance

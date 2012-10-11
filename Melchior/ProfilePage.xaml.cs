@@ -56,12 +56,12 @@ namespace Melchior
         private void SendMessageButton_Click(object sender, RoutedEventArgs e)
         {
             var uri = new Uri(String.Concat("/ConversationPage.xaml?UserId=", MelchiorContext.Instance.OwnerUserId, "&ConversationUserId=", UserId), UriKind.Relative);
-            NavigationService.Navigate(uri); 
+            NavigationService.Navigate(uri);
         }
 
         private void CallButton_Click(object sender, RoutedEventArgs e)
         {
-            
+
         }
 
         private void RemoveFromFrinds_Click(object sender, EventArgs e)

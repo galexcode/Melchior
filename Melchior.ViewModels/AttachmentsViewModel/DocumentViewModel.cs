@@ -14,9 +14,9 @@ namespace Melchior.ViewModels.AttachmentsViewModel
 {
     public class DocumentViewModel : AttachmentViewModel
     {
-        public string Title {get;set;}
+        public string Title { get; set; }
         public string Url { get; set; }
-        
+
         public DocumentViewModel(DocumentInfo document)
         {
             Title = document.Title;

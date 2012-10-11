@@ -56,7 +56,7 @@ namespace Melchior
         private void SaveButton_Click(object sender, EventArgs e)
         {
             var title = TitleTextBox.Text;
-            var editChatCommand = MelchiorContext.Instance.MessagesRequestsLibrary.CreateEditChatCommand(ConversationChatId, title );
+            var editChatCommand = MelchiorContext.Instance.MessagesRequestsLibrary.CreateEditChatCommand(ConversationChatId, title);
             editChatCommand.ExecuteCompleted += (xsender, xe) =>
             {
                 if (xe.Error != null)

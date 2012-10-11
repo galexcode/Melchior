@@ -6,26 +6,26 @@ using System.Xml.Linq;
 
 namespace Melchior.Request.Xml
 {
-	public class VKDataXML : VKData
-	{
-		protected readonly XElement Root;
+    public class VKDataXML : VKData
+    {
+        protected readonly XElement Root;
 
         public VKDataXML(XElement rootElement)
-		{
+        {
             if (rootElement == null) throw new ArgumentNullException("rootElement");
 
-			Root = rootElement;
-		}
+            Root = rootElement;
+        }
 
-		public override string GetName()
-		{
-			return Root.Name.LocalName;
-		}
-        
-		public override string GetTextContent()
-		{
-			return Root.Value;
-		}
+        public override string GetName()
+        {
+            return Root.Name.LocalName;
+        }
+
+        public override string GetTextContent()
+        {
+            return Root.Value;
+        }
 
         public override VKData GetField(string tagName)
         {
@@ -41,9 +41,9 @@ namespace Melchior.Request.Xml
         {
             return new VKDataCollectionXML(Root.Elements().ToList());
         }
-		public override VKDataCollection GetChildren(string tagName)
-		{
+        public override VKDataCollection GetChildren(string tagName)
+        {
             return new VKDataCollectionXML(Root.Elements(tagName).ToList());
-		}
-	}
+        }
+    }
 }

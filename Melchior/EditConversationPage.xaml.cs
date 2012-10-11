@@ -52,7 +52,7 @@ namespace Melchior
         private void ExcludeButton_Click(object sender, EventArgs e)
         {
             var chatUserId = (string)((sender as HyperlinkButton).CommandParameter);
-            
+
             var removeChatUserCommand = MelchiorContext.Instance.MessagesRequestsLibrary.CreateRemoveChatUserCommand(ConversationChatId, chatUserId);
             removeChatUserCommand.ExecuteCompleted += (xsender, xe) =>
             {

@@ -17,8 +17,8 @@ namespace Melchior
 {
     public partial class RequestsPage : PhoneApplicationPage
     {
-        
-        
+
+
 
         public RequestsPage()
         {
@@ -27,8 +27,8 @@ namespace Melchior
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs args)
         {
             base.OnNavigatedTo(args);
-            
-            
+
+
 
             var getRequestsCommandsCommand = MelchiorContext.Instance.FriendsRequestsLibrary.CreateGetRequestsCommand();
             getRequestsCommandsCommand.ExecuteCompleted += (sender, e) =>

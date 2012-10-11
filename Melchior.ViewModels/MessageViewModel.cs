@@ -23,7 +23,7 @@ namespace Melchior.ViewModels
         public List<ForwardMessageViewModel> ForwardMessages { get; private set; }
         public List<AttachmentViewModel> Attachments { get; private set; }
         public GeoInfo Geo { get; private set; }
-        
+
         public MessageViewModel(string accessToken, string ownerUserId, string chatId, string userId, MessageInfo message)
         {
             OwnerUserId = ownerUserId;
@@ -33,7 +33,7 @@ namespace Melchior.ViewModels
             Title = message.Title;
             Body = message.Body;
             Date = message.Date;
-            
+
             var forwardMessages = message.ForwardMessages;
             if (forwardMessages != null)
             {

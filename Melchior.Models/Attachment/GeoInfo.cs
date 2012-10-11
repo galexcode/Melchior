@@ -3,7 +3,7 @@ using Melchior.Data.Common;
 
 namespace Melchior.Models
 {
-    
+
     public struct CoordinatesDescription
     {
         public string X;
@@ -19,19 +19,20 @@ namespace Melchior.Models
         public string Country { get { return Data.GetFieldTextContent("Country"); } }
         public string City { get { return Data.GetFieldTextContent("City"); } }
 
-        public PlaceInfo(VKData data) : base(data)
+        public PlaceInfo(VKData data)
+            : base(data)
         {
-            
+
         }
     }
-    
 
-	/// <summary>
-	/// 
-	/// <remarks>Author WrMax</remarks>
-	/// </summary>
-	public class GeoInfo : DataInfo
-	{
+
+    /// <summary>
+    /// 
+    /// <remarks>Author WrMax</remarks>
+    /// </summary>
+    public class GeoInfo : DataInfo
+    {
         public string Type { get { return Data.GetFieldTextContent("Type"); } }
         public CoordinatesDescription Coordinates
         {
@@ -44,7 +45,7 @@ namespace Melchior.Models
                     X = content.Substring(0, content.IndexOf(' ')),
                     Y = content.Substring(content.IndexOf(' ') + 1)
                 };
-            } 
+            }
         }
         public PlaceInfo Place
         {
@@ -58,7 +59,7 @@ namespace Melchior.Models
 
         public GeoInfo(VKData data)
             : base(data)
-		{
-		}
-	}
+        {
+        }
+    }
 }

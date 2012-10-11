@@ -20,7 +20,7 @@ namespace Melchior
     {
         public MainPage()
         {
-            InitializeComponent();            
+            InitializeComponent();
         }
 
         private void PhoneApplicationPage_Loaded(object sender, RoutedEventArgs e)
@@ -53,13 +53,13 @@ namespace Melchior
                 var uri = new Uri(String.Concat("/PivotPage.xaml"), UriKind.Relative);
                 NavigationService.Navigate(uri);
             };
-            authCommand.Execute();          
+            authCommand.Execute();
         }
-        
+
         private void SignUpButton_Click(object sender, RoutedEventArgs e)
         {
             var uri = new Uri("/SignUpPage.xaml", UriKind.Relative);
-            NavigationService.Navigate(uri);  
+            NavigationService.Navigate(uri);
         }
     }
 }

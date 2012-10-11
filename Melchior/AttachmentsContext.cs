@@ -74,7 +74,7 @@ namespace Melchior
         public void AddAttachImage(byte[] bytes)
         {
             AttachmentCounter = AttachmentCounter++;
-            AttachImages.Add(new AttachImage(AttachmentCounter, bytes)); 
+            AttachImages.Add(new AttachImage(AttachmentCounter, bytes));
         }
 
         public void RemoveByGuid(int imageGuid)

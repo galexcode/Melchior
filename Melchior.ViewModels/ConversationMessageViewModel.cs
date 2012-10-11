@@ -23,14 +23,14 @@ namespace Melchior.ViewModels
             }
         }
         private string userName;
-        public string UserName 
-        { 
-            get { return userName; } 
+        public string UserName
+        {
+            get { return userName; }
             private set
-            { 
+            {
                 userName = value;
                 NotifyPropertyChanged("UserName");
-            } 
+            }
         }
         private BitmapImage userPhoto;
         public BitmapImage UserPhoto
@@ -133,7 +133,7 @@ namespace Melchior.ViewModels
                         return;
                     }
                     if (e.Result.Count == 0) return;
-                    for(int i = 0; i < e.Result.Count; i++)
+                    for (int i = 0; i < e.Result.Count; i++)
                     {
                         LoadPhoto(e.Result[i].PhotoLink, i + 1);
                     }
@@ -159,7 +159,7 @@ namespace Melchior.ViewModels
                 var user = e.Result[0];
                 UserId = user.UserId;
                 UserName = String.Concat(user.FirstName, Chars.Space, user.LastName);
-                
+
                 LoadPhoto(user.PhotoLink);
             };
             getUsersCommand.Execute(true);
